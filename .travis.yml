@@ -1,22 +1,12 @@
-+This .travis.yml made for erlang/elixir was forked from http://thirdpinion.com/main/programming/build-and-test-elixir-projects-with-travis-ci/
-+Specify that it's an erlang project
 language: erlang
-
-+Specify the 17.4 release of erlang (elixir needs that or newer)
 otp_release:
 - 17.4
-
-+Download and build elixir.
 before_install:
 - git clone https://github.com/elixir-lang/elixir
 - cd elixir
 - git checkout v1.0.3
 - cd ..
 - make -C elixir
-
-+Make sure the elixir binaries are added to PATH
 before_script: "export PATH=`pwd`/elixir/bin:$PATH"
-
-+Run the mix command. I'm just getting the dependencies and doing "test", so I set the MIX_ENV to "test".
 script: "MIX_ENV=test mix do deps.get, test"
   
