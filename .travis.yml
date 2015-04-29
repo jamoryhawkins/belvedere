@@ -8,6 +8,6 @@ before_install:
 - cd ..
 - make -C elixir
 before_script: "export PATH=`pwd`/elixir/bin:$PATH"
-script: "hello.erl"
+script: "MIX_ENV=test mix do deps.get, test"
 notifications:
   slack: realminc:rDwDl8LzkSDVwzG6aCfkI1op
