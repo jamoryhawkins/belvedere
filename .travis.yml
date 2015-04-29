@@ -9,9 +9,6 @@ before_install:
 - make -C elixir
 before_script: "export PATH=`pwd`/elixir/bin:$PATH"
 sudo: false
-env:
-- ELIXIR_ERL_OPTIONS=""
-- ELIXIR_ERL_OPTIONS="+T 9"
-script: "MIX_ENV=test mix do deps.get, test"
+script: "elixir /home/travis/build/jamoryhawkins/belvedere/hello.exs"
 notifications:
   slack: realminc:rDwDl8LzkSDVwzG6aCfkI1op
