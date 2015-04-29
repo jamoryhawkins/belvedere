@@ -9,6 +9,7 @@ before_install:
 - make -C elixir
 before_script: "export PATH=`pwd`/elixir/bin:$PATH"
 sudo: false
-script: "elixir /home/travis/build/jamoryhawkins/belvedere/test/belvedere_test.exs"
+script:
+  -mix test
 notifications:
   slack: realminc:rDwDl8LzkSDVwzG6aCfkI1op
